@@ -25,7 +25,10 @@ def GenerateSensorData():
 
 def UpdateCurrentPose(w, v, pose):
         # use velocity model introduced by 《Probabilistic Robotics》
-        r = abs(v / w)
+        # r = abs(v / w)
+        # for the direction of the v must point to the circle center
+        # and this direction is decided by the direction of the w
+        r = v / w 
         x_c = pose[1] - r * sin(pose[0])
         y_c = pose[2] + r * cos(pose[0])
         # update orientation
