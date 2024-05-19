@@ -28,6 +28,8 @@ def UpdateCurrentPose(w, v, pose):
         # r = abs(v / w)
         # for the direction of the v must point to the circle center
         # and this direction is decided by the direction of the w
+        # for example, the positive v with a positive w and the positive v with a negative w
+        # will point to the different circle center
         r = v / w 
         x_c = pose[1] - r * sin(pose[0])
         y_c = pose[2] + r * cos(pose[0])
